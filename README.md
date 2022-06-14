@@ -2,6 +2,8 @@
 
 ## Aim:
 
+To develop a animator using unity.
+
 ## Algorithm:
 ### Step 1: Download 2 crouch idle from maximo 3d. Drag it and drop it in unity asset.
 ### Step 2: Select one crouch and in the inspector choose rig-> Animation type (humaniod) and then click update.
@@ -21,6 +23,42 @@
 
 ## Program:
 
+### IdleToCrouch
+
+```python3
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class idleToCrouch : MonoBehaviour
+{
+    public Animator animator;
+    public float InputX;
+    public float InputY;
+    // Start is called before the first frame update
+    void Start()
+    {
+        animator = this.gameObject.GetComponent<Animator>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        InputY = Input.GetAxis("Vertical");
+        InputX = Input.GetAxis("Horizontal");
+        animator.SetFloat("InputY",InputY);
+        animator.SetFloat("InputX", InputX);
+    }
+}
+
+```
+
 ## Output:
+![i3](https://user-images.githubusercontent.com/81132849/173627857-9cc9ff1c-e180-4ef7-bb0a-677f7833cb7d.png)
+
 
 ## Result:
+
+Animator using unity is developed successfully.
+
+
